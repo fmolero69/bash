@@ -1,0 +1,60 @@
+#!/bin/bash
+
+# Visualizar ficheros y directorios
+  function cdls { cd "$@"; lsd; }
+  alias cd="cdls"
+  alias cp='cp -av'
+  alias ff='fc-list | grep '  
+  alias ls='lsd'
+  alias cat='bat'
+  alias fca='fc-cache -fv'
+  alias gitc='git clone'
+
+
+# Alias cmd pacman
+#-----------------
+  alias Actualizar='echo $(clear); sudo pacman -Syyu --noconfirm'
+  alias Pacman='echo $(clear); sudo pacman -S '
+  alias Upacman='echo $(clear); sudo pacman -Rsc '
+  alias Spacman='echo $(clear); pacman -Ss '
+  alias Ipacman='echo $(clear); pacman -Si '
+  alias desbloquear='sudo rm /var/lib/pacman/db.lck'
+
+
+# Alias miscesalneos
+#------------------
+#  alias creacion='stat / | awk '/Creación: /{print $2 ' " substr($3,1,5)}'"
+  alias home='cd ~'
+  alias Descargar='axel -a -n 8'
+  alias musica='ncmpcpp -S visualizer'
+  alias normalizar='mp3gain -r *.mp3'
+  alias registro='journalctl -p 3 -xb'
+  alias servifail='systemctl --failed'
+  alias serviacti='systemctl list-units --type=service --state=active'
+  alias sincronizar='ping 1.1.1.1'
+  alias terminal='xrdb ~/.Xresources'
+  alias DOWNLOAD-MP3='youtube-dl -x --audio-format mp3'
+  alias xampp='sudo /opt/lampp/manager-linux-x64.run'
+  alias ranking="cat ~/.bash_history | awk '{print $1}' | sort | uniq -c | sort -nr | head -n 10"
+  
+# MONITORS
+#-----------------
+  alias monitor1='glances -1'
+  alias monitor2='slurm -i enp2s0'
+  alias monitor3='vnstat -l -u -i enp2s0'
+  alias monitor4='watch -n 1 -d free'
+  alias monitor5='cmatrix -bC Cyan'
+  alias hora='tty-clock -cstDC 6'
+
+# Firewall ufw:
+#------------------
+  alias ufw_status='sudo ufw status verbose' # Status detallado
+  alias ufw_numbered='sudo ufw status numbered' # muestra un estatus numerando las reglas
+  alias ufw_resetr='sudo ufw reset' # Resetea las reglas agregadas
+  alias ufw_start='sudo ufw start' # Inicia ufw
+  alias ufw_enable='sudo ufw enable' # Activar al inicio ufw
+  alias ufw_disable='sudo ufw diasable' # Desactivar ufw
+  alias ufw_reload='sudo ufw reload' # Recargar ufw
+  alias ufw_allow='sudo ufw allow' # Agregar nueva reglas
+  alias ufw_deny='sudo ufw deny' # Denegar reglas
+  alias ufw_delete='sudo ufw delete' # Para borrar definir el número de la regla
